@@ -1,0 +1,44 @@
+{
+  "compilerOptions": {
+    /* Base Options */
+    "target": "es2024",
+    "resolveJsonModule": true,
+    "moduleDetection": "force",
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+
+    /* Strictness */
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "forceConsistentCasingInFileNames": true,
+
+    /* Enable only when compiling JavaScript files */
+    // "allowJs": true,
+
+    /* If building a library in a monorepo */
+    // "composite": true,
+    // "declaration": true,
+    // "declarationMap": true,
+
+    /* If building a library */
+    // "declaration": true,
+
+    /* If transpiling for Node.js with TypeScript */
+    "lib": ["es2024"],
+    "module": "NodeNext",
+    "types": ["node"],
+    "rootDir": "src",
+    "outDir": "dist",
+    "sourceMap": true,
+    "noEmitOnError": true
+
+    /* If transpiling for React with TypeScript */
+    // "lib": ["es2024", "dom", "dom.iterable"],
+    // "module": "ESNext",
+    // "moduleResolution": "Bundler",
+    // "noEmit": true,
+    // "jsx": "react-jsx"
+  },
+  "include": ["src"]
+}

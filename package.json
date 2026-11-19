@@ -1,0 +1,44 @@
+{
+  "name": "typescript-template",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "start": "node -r dotenv/config ./dist/index.js",
+    "dev": "nodemon -L --watch src --ext ts,js,json --exec \"tsc && npm run start\"",
+    "migration-generate": "cross-env PG_PORT=15000 drizzle-kit generate --config=drizzle.config.cjs",
+    "migration-run": "cross-env PG_PORT=15000 node -r dotenv/config ./migrations/run.mjs",
+    "lint": "oxlint --fix --deny-warnings .",
+    "lint:check": "oxlint --deny-warnings .",
+    "typecheck": "tsc --noEmit",
+    "format": "prettier --config .prettierrc.cjs --write **/*.{ts,js,cjs,mjs,json,yml,yaml}",
+    "format:check": "prettier --config .prettierrc.cjs --check **/*.{ts,js,cjs,mjs,json,yml,yaml}",
+    "prepare": "husky"
+  },
+  "dependencies": {
+    "axios": "^1.21.1",
+    "dotenv": "^18.0.10",
+    "drizzle-orm": "^1.0.0-rc.4",
+    "express": "^5.3.0",
+    "http-graceful-shutdown": "^4.0.0",
+    "pg": "^8.23.1",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.6.6",
+    "@types/pg": "^8.23.1",
+    "cross-env": "^10.1.0",
+    "drizzle-kit": "^1.0.0-rc.4",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.6.1",
+    "nodemon": "^3.1.14",
+    "oxlint": "^1.94.0",
+    "prettier": "^3.10.1",
+    "typescript": "^7.0.2"
+  },
+  "allowScripts": {
+    "esbuild@0.25.12": true
+  }
+}
